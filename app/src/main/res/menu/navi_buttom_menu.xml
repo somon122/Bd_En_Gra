@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:icon="@drawable/speeker"
+        android:id="@+id/pronunciationRead_id"
+        android:title="Pronunciation" />
+
+    <item
+        android:icon="@drawable/ic_menu_share"
+        android:id="@+id/shareReadView_id"
+        android:title="Share" />
+
+    <item
+        android:icon="@drawable/comment_black_24dp"
+        android:id="@+id/commentReadView_id"
+        android:title="Comment" />
+
+</menu>

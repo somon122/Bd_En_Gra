@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/advance_id"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Advance Exercise"
+        android:textAllCaps="false"
+        android:layout_margin="10dp"
+        android:textColor="#fff"
+        android:background="#0495E2"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/hscBoard_id"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_margin="10dp"
+        android:background="#0495E2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="HSC Board Questions" />
+
+    <Button
+        android:id="@+id/sscBoard_id"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:background="#0495E2"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="SSC Board Questions" />
+    <Button
+        android:id="@+id/jscBoard_id"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:background="#0495E2"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="JSC Board Questions" />
+</LinearLayout>

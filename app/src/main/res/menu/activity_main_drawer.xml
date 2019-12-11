@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_grammars"
+            android:icon="@drawable/grammar"
+            android:title="@string/menu_grammars" />
+        <item
+            android:id="@+id/nav_compositions"
+            android:icon="@drawable/composition"
+            android:title="@string/menu_compositions" />
+        <item
+            android:id="@+id/nav_questions"
+            android:icon="@drawable/question_answer"
+            android:title="@string/menu_model_questions" />
+        <item
+            android:id="@+id/nav_translators"
+            android:icon="@drawable/speeker"
+            android:title="@string/menu_translators" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_comment"
+                android:icon="@drawable/comment_black_24dp"
+                android:title="@string/menu_comment" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_rate_us"
+                android:icon="@drawable/like"
+                android:title="@string/menu_rate_us" />
+
+            <item
+                android:id="@+id/nav_termsAndConditions"
+                android:icon="@drawable/warning_black_24dp"
+                android:title="@string/privacy_policy" />
+        </menu>
+    </item>
+
+</menu>
