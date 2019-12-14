@@ -1,20 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_home"
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/splash_screen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/grammar_Sentence_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@drawable/button_shadow"
+            android:text="Sentence"
+            />
+        <Button
+            android:id="@+id/grammar_PartsOfSpeech_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Parts of Speech"
+            />
+        <Button
+            android:id="@+id/grammar_Noun_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Noun"
+            />
+        <Button
+            android:id="@+id/grammar_Pronoun_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Pronoun"
+            />
+        <Button
+            android:id="@+id/grammar_Adjective_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Adjective"
+            />
+        <Button
+            android:id="@+id/grammar_Verb_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Verb"
+            />
+        <Button
+            android:id="@+id/grammar_Adverb_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Adverb"
+            />
+        <Button
+            android:id="@+id/grammar_Preposition_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Preposition"
+            />
+        <Button
+            android:id="@+id/grammar_Conjunction_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Conjunction"
+            />
+        <Button
+            android:id="@+id/grammar_Interjection_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Interjection"
+            />
+        <Button
+            android:id="@+id/grammar_Tense_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/button_shadow"
+            android:text="Tense"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</ScrollView>

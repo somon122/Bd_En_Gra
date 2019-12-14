@@ -40,7 +40,8 @@ public class GrammarAdapter extends RecyclerView.Adapter<GrammarAdapter.ViewHold
         grammarItemClass = grammarList.get(position);
 
         holder.titleView.setText(grammarItemClass.mTitle);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+        holder.titleView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 grammarItemClass = grammarList.get(position);

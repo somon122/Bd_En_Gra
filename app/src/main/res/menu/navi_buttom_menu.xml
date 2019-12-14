@@ -4,6 +4,11 @@
 
 
     <item
+        android:icon="@drawable/translate"
+        android:id="@+id/translateRead_id"
+        android:title="Translator" />
+
+    <item
         android:icon="@drawable/speeker"
         android:id="@+id/pronunciationRead_id"
         android:title="Pronunciation" />

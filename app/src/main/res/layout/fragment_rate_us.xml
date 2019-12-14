@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/rateUs"
             android:layout_width="0dp"
-            android:text="BD English Grammar App"
+            android:text="BD English Grammar"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:textSize="20sp"

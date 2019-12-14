@@ -47,4 +47,19 @@ public class CategoryClass {
         return categoryValue;
 
     }
+
+    public List<String> languageList() {
+
+        categoryValue = new ArrayList<String>();
+        categoryValue.add("Select Language");
+        categoryValue.add("bn");
+        categoryValue.add("JAPANESE");
+        categoryValue.add("GERMAN");
+        categoryValue.add("ENGLISH");
+        categoryValue.add("TAMIL");
+        categoryValue.add("MALAY");
+        categoryValue.add("RUSSIAN");
+        return categoryValue;
+
+    }
 }

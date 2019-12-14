@@ -42,7 +42,7 @@ public class ComAdapter extends RecyclerView.Adapter<ComAdapter.ViewHolder> {
 
         comPojoClass = comList.get(position);
         holder.titleTV.setText(comPojoClass.getmComTitle());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.titleTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

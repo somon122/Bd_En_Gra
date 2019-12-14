@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -12,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mannan.translateapi.Language;
+import com.mannan.translateapi.TranslateAPI;
 import com.worldtechpoints.bd_english_gramar.R;
 
 import java.util.Locale;
@@ -66,7 +70,7 @@ public class ComReadActivity extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    t1.setLanguage(Locale.US);
                 }
             }
         });
@@ -76,33 +80,78 @@ public class ComReadActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                int id = menuItem.getItemId();
+                switch (menuItem.getItemId())
+                {
+                    case R.id.translateRead_id:
+                       translate(fullText);
+                        return true;
 
-                if (id == R.id.pronunciationRead_id){
+                    case R.id.pronunciationRead_id:
 
-                    t1.speak(fullText, TextToSpeech.QUEUE_FLUSH, null);
+                        t1.speak(fullText, TextToSpeech.QUEUE_FLUSH, null);
+                        return true;
 
+
+                    case R.id.shareReadView_id:
+                        shareApp(fullText,titleText);
+
+                        return true;
+
+                    case R.id.commentReadView_id:
+                        Toast.makeText(ComReadActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show();
+
+                        return true;
+
+                    default:
+                        return false;
                 }
-                if (id == R.id.shareReadView_id){
-
-
-                    shareApp(fullText,titleText);
-
-
-                }
-                if (id == R.id.commentReadView_id){
-
-
-                    Toast.makeText(ComReadActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
-
-                }
-
-
-
-                return false;
             }
         });
 
+
+
+    }
+
+
+    private void translate(String fullText) {
+
+        TranslateAPI translateAPI = new TranslateAPI(
+                Language.AUTO_DETECT,   //Source Language
+                Language.BENGALI,         //Target Language
+                fullText);           //Query Text
+
+        translateAPI.setTranslateListener(new TranslateAPI.TranslateListener() {
+            @Override
+            public void onSuccess(String s) {
+                answerDialog(s);
+            }
+
+            @Override
+            public void onFailure(String s) {
+
+                answerDialog("Sorry ! \n\n Try again");
+            }
+        });
+
+
+
+    }
+    private void answerDialog(String ans) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("বাংলা আনুবাদ");
+        builder.setMessage(ans);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
 
     }

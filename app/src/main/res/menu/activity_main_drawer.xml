@@ -18,8 +18,13 @@
             android:title="@string/menu_model_questions" />
         <item
             android:id="@+id/nav_translators"
-            android:icon="@drawable/speeker"
+            android:icon="@drawable/translate"
             android:title="@string/menu_translators" />
+
+        <item
+            android:id="@+id/nav_pronunciation"
+            android:icon="@drawable/speeker"
+            android:title="@string/menu_Pronunciation" />
     </group>
 
     <item android:title="Communicate">
