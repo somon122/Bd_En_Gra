@@ -33,7 +33,6 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-firestore:17.1.2'
     implementation 'com.google.firebase:firebase-ads:17.0.0'
-
     implementation 'com.github.iammannan:TranslateAPI:1.1'
 
 

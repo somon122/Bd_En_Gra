@@ -52,13 +52,11 @@ public class CategoryClass {
 
         categoryValue = new ArrayList<String>();
         categoryValue.add("Select Language");
-        categoryValue.add("bn");
-        categoryValue.add("JAPANESE");
-        categoryValue.add("GERMAN");
+        categoryValue.add("ARABIAN");
+        categoryValue.add("BENGALI");
         categoryValue.add("ENGLISH");
-        categoryValue.add("TAMIL");
-        categoryValue.add("MALAY");
-        categoryValue.add("RUSSIAN");
+        categoryValue.add("HINDI");
+        categoryValue.add("URDU");
         return categoryValue;
 
     }

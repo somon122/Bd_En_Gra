@@ -2,13 +2,16 @@ package com.worldtechpoints.bd_english_gramar.Features.compositions;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -28,6 +31,8 @@ import com.worldtechpoints.bd_english_gramar.Features.model_questions.PracticeCl
 import com.worldtechpoints.bd_english_gramar.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ComShowActivity extends AppCompatActivity {
@@ -113,18 +118,79 @@ public class ComShowActivity extends AppCompatActivity {
                                 comList.add(comPojoClass);
                             }
 
-                            adapter = new ComAdapter(ComShowActivity.this,comList);
-                            recyclerView.setAdapter(adapter);
-                            adapter.notifyDataSetChanged();
-
+                            updateListUsers(comList);
 
                         }
 
                     }
                 });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.searchBar_id);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                searchQuestion(query);
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                searchQuestion(newText);
+
+                return false;
+            }
+        });
 
 
+        return true;
+    }
+
+    private void searchQuestion(String recherche) {
+        if (recherche.length() > 0)
+            recherche = recherche.substring(0, 1).toUpperCase() + recherche.substring(1).toLowerCase();
+
+        List<ComPojoClass> results = new ArrayList<>();
+        for(ComPojoClass comPojoClass : comList){
+            if(comPojoClass.getmComTitle() != null && comPojoClass.getmComTitle().contains(recherche)){
+                results.add(comPojoClass);
+            }
+        }
+        updateListUsers(results);
+    }
+
+
+    private void updateListUsers(List<ComPojoClass> listQuestion) {
+
+        // Sort the list by date
+
+        Collections.sort(listQuestion, new Comparator<ComPojoClass>() {
+            @Override
+            public int compare(ComPojoClass o1, ComPojoClass o2) {
+                int res = 1;
+                if (o1.getmComTitle() == (o2.getmComTitle())) {
+                    res = -1;
+                }
+                return res;
+            }
+        });
+
+        adapter = new ComAdapter(ComShowActivity.this,listQuestion);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
     }
+
+
 }
+

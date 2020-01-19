@@ -16,10 +16,11 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.worldtechpoints.bd_english_gramar.R;
 
-public class GrammarFragment extends Fragment {
+public class GrammarFragment extends Fragment{
 
 
-    private Button sentenceButton,partsOfSpeechButton;
+    private Button sentenceButton,partsOfSpeechButton,nounButton,pronounButton,adjectiveButton,verbButton,prepositionButton,conjunctionButton;
+    private Button interjectionButton,tenseButton;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,6 +30,16 @@ public class GrammarFragment extends Fragment {
 
         sentenceButton = root.findViewById(R.id.grammar_Sentence_id);
         partsOfSpeechButton = root.findViewById(R.id.grammar_PartsOfSpeech_id);
+
+        nounButton = root.findViewById(R.id.grammar_Noun_id);
+        pronounButton = root.findViewById(R.id.grammar_Pronoun_id);
+        adjectiveButton = root.findViewById(R.id.grammar_Adjective_id);
+        verbButton = root.findViewById(R.id.grammar_Verb_id);
+        prepositionButton = root.findViewById(R.id.grammar_Preposition_id);
+        conjunctionButton = root.findViewById(R.id.grammar_Conjunction_id);
+        interjectionButton = root.findViewById(R.id.grammar_Interjection_id);
+        tenseButton = root.findViewById(R.id.grammar_Tense_id);
+
 
 
         sentenceButton.setOnClickListener(new View.OnClickListener() {
@@ -45,17 +56,65 @@ public class GrammarFragment extends Fragment {
             public void onClick(View view) {
 
                 sent("Parts_of_Speech");
-
             }
         });
-        partsOfSpeechButton.setOnClickListener(new View.OnClickListener() {
+        nounButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                sent("Parts_of_Speech");
-
+                sent("Noun");
             }
         });
+        pronounButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Pronoun");
+            }
+        });
+        adjectiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Adjective");
+            }
+        });
+        verbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Verb");
+            }
+        });
+        prepositionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Preposition");
+            }
+        });
+        conjunctionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Conjunction");
+            }
+        });
+        interjectionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Interjection");
+            }
+        });
+        tenseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sent("Tense");
+            }
+        });
+
 
 
         return root;
@@ -69,4 +128,6 @@ public class GrammarFragment extends Fragment {
         startActivity(intent);
 
     }
+
+
 }

@@ -5,11 +5,11 @@
     <string name="nav_header_title">MD Somon Hossain</string>
     <string name="nav_header_subtitle">worldtechpoints@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="logOut">Logout</string>
+    <string name="exit">Exit</string>
 
     <string name="menu_grammars">English Grammar</string>
     <string name="menu_compositions">English Composition</string>
-    <string name="menu_model_questions">Exercise</string>
+    <string name="menu_model_questions">Grammar Exercise</string>
     <string name="menu_translators">Translation</string>
     <string name="menu_Pronunciation">Pronunciation</string>
     <string name="menu_share">Share</string>

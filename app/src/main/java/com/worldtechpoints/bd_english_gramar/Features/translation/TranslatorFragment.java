@@ -21,6 +21,7 @@ import com.mannan.translateapi.TranslateAPI;
 import com.worldtechpoints.bd_english_gramar.CategoryClass;
 import com.worldtechpoints.bd_english_gramar.R;
 
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class TranslatorFragment extends Fragment {
     String langName;
     List<String>langNameList;
     CategoryClass categoryClass;
+    String targetLang;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +59,27 @@ public class TranslatorFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 langName = langListSpinner.getSelectedItem().toString();
+
+                switch (langName) {
+                    case "BENGALI":
+                        targetLang = "bn";
+                        break;
+                    case "ENGLISH":
+                        targetLang = "en";
+                        break;
+                    case "ARABIAN":
+                        targetLang = "ar";
+                        break;
+                    case "HINDI":
+                        targetLang = "hi";
+                        break;
+                    case "URDU":
+                        targetLang = "ur";
+                        break;
+                    default:
+                        Toast.makeText(getContext(), "Please Select Language", Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
 
             @Override
@@ -74,7 +97,7 @@ public class TranslatorFragment extends Fragment {
                     targetET.setError("Please Enter some Text");
                 }else {
 
-                    translate(text,langName);
+                    translate(text, targetLang);
                 }
 
             }
@@ -86,11 +109,10 @@ public class TranslatorFragment extends Fragment {
     private void translate(String fullText,String name) {
 
         TranslateAPI translateAPI = new TranslateAPI(
-                Language.AUTO_DETECT,   //Source Language
-                name,         //Target Language
-                fullText);           //Query Text
+                Language.AUTO_DETECT,
+                name,
+                fullText);
 
-        Toast.makeText(getContext(), name, Toast.LENGTH_SHORT).show();
         translateAPI.setTranslateListener(new TranslateAPI.TranslateListener() {
             @Override
             public void onSuccess(String s) {
@@ -101,7 +123,7 @@ public class TranslatorFragment extends Fragment {
             @Override
             public void onFailure(String s) {
 
-                showTV.setText("Sorry ! \n\n Try again");
+                showTV.setText("Sorry ! \n\n Select target Language Then Try again");
             }
         });
     }

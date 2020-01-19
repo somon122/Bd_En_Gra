@@ -1,6 +1,7 @@
 package com.worldtechpoints.bd_english_gramar;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,6 +25,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,13 +74,20 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if (id == R.id.action_logOut){
+        if (id == R.id.action_exit){
 
-            Toast.makeText(this, "Logout is coming..", Toast.LENGTH_SHORT).show();
+           finishAffinity();
         }
          if (id == R.id.action_AdminPanel){
 
-             startActivity(new Intent(MainActivity.this,SubmitAllActivity.class));
+             adminPanel("12345");
+             //startActivity(new Intent(MainActivity.this,SubmitAllActivity.class));
+
+        }
+         if (id == R.id.action_refresh){
+
+             startActivity(new Intent(MainActivity.this,MainActivity.class));
+             finish();
 
         }
 
@@ -90,6 +101,54 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    private void adminPanel(final String password) {
 
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        View view1 = getLayoutInflater().inflate(R.layout.admin_control, null);
+
+        final EditText passwordET = view1.findViewById(R.id.adminCheckPassword_id);
+        Button submit = view1.findViewById(R.id.adminSubmit_id);
+
+        builder.setTitle("Admin Panel");
+        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.dismiss();
+            }
+        });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String mPassword = passwordET.getText().toString();
+
+                if (mPassword.isEmpty()) {
+
+                    passwordET.setError("Please enter password");
+
+                } else {
+
+                    if (mPassword.equals(password)) {
+
+                        Toast.makeText(MainActivity.this, "Password is matches", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, SubmitAllActivity.class));
+
+
+                    } else {
+
+                        Toast.makeText(MainActivity.this, "Password is not matches", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+        builder.setView(view1);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+    }
 }

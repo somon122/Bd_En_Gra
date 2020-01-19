@@ -11,7 +11,7 @@
         android:id="@+id/modelShowToolbar_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ddd"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
