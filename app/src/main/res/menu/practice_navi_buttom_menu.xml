@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:icon="@drawable/check_circle_black_24dp"
+        android:id="@+id/practiceAnsReadView_id"
+        android:title="Check Ans" />
+
+    <item
+        android:icon="@drawable/translate"
+        android:id="@+id/practiceTranslateRead_id"
+        android:title="Translate" />
+
+    <item
+        android:icon="@drawable/speeker"
+        android:id="@+id/practicePronunciationRead_id"
+        android:title="Pronunciation" />
+
+    <item
+        android:icon="@drawable/comment_black_24dp"
+        android:id="@+id/practiceCommentReadView_id"
+        android:title="Comment" />
+
+    <item
+        android:icon="@drawable/ic_menu_share"
+        android:id="@+id/practiceShareReadView_id"
+        android:title="Share" />
+
+</menu>

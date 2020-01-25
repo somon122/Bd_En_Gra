@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
          if (id == R.id.action_AdminPanel){
 
              adminPanel("12345");
-             //startActivity(new Intent(MainActivity.this,SubmitAllActivity.class));
 
         }
          if (id == R.id.action_refresh){

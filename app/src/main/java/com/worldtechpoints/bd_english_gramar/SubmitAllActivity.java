@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.worldtechpoints.bd_english_gramar.Features.compositions.ComSubmitActivity;
 import com.worldtechpoints.bd_english_gramar.Features.grammar.GrammarSubmitActivity;
+import com.worldtechpoints.bd_english_gramar.Features.model_questions.ModelQShowActivity;
 import com.worldtechpoints.bd_english_gramar.Features.model_questions.ModelQSubmitActivity;
 
 public class SubmitAllActivity extends AppCompatActivity {
@@ -42,7 +43,7 @@ public class SubmitAllActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Model Question Category");
+        setTitle("Item Submit Category");
 
 
     }
@@ -93,9 +94,7 @@ public class SubmitAllActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SubmitAllActivity.this, ModelQSubmitActivity.class);
-                intent.putExtra("value","All Question Exercise");
-                startActivity(intent);
+               sent("All Question Exercise");
 
 
             }
@@ -104,9 +103,7 @@ public class SubmitAllActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SubmitAllActivity.this, ModelQSubmitActivity.class);
-                intent.putExtra("value","HSC Board Question");
-                startActivity(intent);
+                sent("HSC Board Question");
 
 
             }
@@ -115,9 +112,7 @@ public class SubmitAllActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SubmitAllActivity.this, ModelQSubmitActivity.class);
-                intent.putExtra("value","SSC Board Question");
-                startActivity(intent);
+                sent("SSC Board Question");
 
             }
         });
@@ -125,10 +120,7 @@ public class SubmitAllActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SubmitAllActivity.this, ModelQSubmitActivity.class);
-                intent.putExtra("value","JSC Board Question");
-                startActivity(intent);
-
+               sent("JSC Board Question");
 
 
             }
@@ -141,6 +133,12 @@ public class SubmitAllActivity extends AppCompatActivity {
 
     }
 
+    private void sent(String value){
+
+        Intent intent = new Intent(this, ModelQSubmitActivity.class);
+        intent.putExtra("value",value);
+        startActivity(intent);
+    }
 
 
 

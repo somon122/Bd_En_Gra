@@ -87,23 +87,19 @@ public class ModelQSubmitActivity extends AppCompatActivity {
 
             if (mainCategory.equals("All Question Exercise")) {
 
-                subCategoryList = categoryClass.englishCategory();
-
+                subCategoryList = categoryClass.grammarCategory();
             }
             if (mainCategory.equals("HSC Board Question")) {
 
-                subCategoryList = categoryClass.englishCategory();
-
+                subCategoryList = categoryClass.HSC_GrammarPractice();
             }
             if (mainCategory.equals("SSC Board Question")) {
 
-                subCategoryList = categoryClass.englishCategory();
-
+                subCategoryList = categoryClass.SSC_GrammarPractice();
             }
             if (mainCategory.equals("JSC Board Question")) {
 
-                subCategoryList = categoryClass.englishCategory();
-
+                subCategoryList = categoryClass.JSC_GrammarPractice();
             }
 
         }

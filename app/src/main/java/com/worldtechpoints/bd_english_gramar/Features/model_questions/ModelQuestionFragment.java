@@ -34,19 +34,14 @@ public class ModelQuestionFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ModelQShowActivity.class);
-                intent.putExtra("value","All Question Exercise");
-                startActivity(intent);
-
+              sent("All Question Exercise");
             }
         });
         hscButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ModelQShowActivity.class);
-                intent.putExtra("value","HSC Board Question");
-                startActivity(intent);
+                sent("HSC Board Question");
 
             }
         });
@@ -54,9 +49,8 @@ public class ModelQuestionFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ModelQShowActivity.class);
-                intent.putExtra("value","SSC Board Question");
-                startActivity(intent);
+                sent("SSC Board Question");
+
 
             }
         });
@@ -64,16 +58,19 @@ public class ModelQuestionFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ModelQShowActivity.class);
-                intent.putExtra("value","JSC Board Question");
-                startActivity(intent);
-
-
+                sent("JSC Board Question");
             }
         });
 
 
-
         return root;
     }
+
+    private void sent(String value){
+
+        Intent intent = new Intent(getContext(), ModelQShowActivity.class);
+        intent.putExtra("value",value);
+        startActivity(intent);
+    }
+
 }

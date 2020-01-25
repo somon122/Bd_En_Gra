@@ -7,8 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="exit">Exit</string>
 
-    <string name="menu_grammars">English Grammar</string>
-    <string name="menu_compositions">English Composition</string>
+    <string name="menu_grammars">English Grammar Items</string>
+    <string name="menu_compositions">English Composition Site</string>
     <string name="menu_model_questions">Grammar Exercise</string>
     <string name="menu_translators">Translation</string>
     <string name="menu_Pronunciation">Pronunciation</string>

@@ -15,7 +15,7 @@ import com.worldtechpoints.bd_english_gramar.R;
 public class CompositionFragment extends Fragment {
 
 
-    private Button paragraph,letter, application,email,cv,essay,chart,dialogue,story;
+    private Button paragraph,letter, application,email,cv,essay,chart,dialogue,story,reports;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class CompositionFragment extends Fragment {
         chart =root.findViewById(R.id.chart_id);
         dialogue =root.findViewById(R.id.dialogue_id);
         story =root.findViewById(R.id.completingStory_id);
+        reports =root.findViewById(R.id.reports_id);
 
 
                 paragraph.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,13 @@ public class CompositionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 sent("Application");
+
+            }
+        });
+                reports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sent("Reports");
 
             }
         });

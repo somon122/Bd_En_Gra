@@ -65,6 +65,7 @@ public class CommentFragment extends Fragment {
 
 
         commentClass = new CommentClass();
+
         commentET = root.findViewById(R.id.commentFullT_id);
         commentTitle = root.findViewById(R.id.commentTitle_id);
         commentSent = root.findViewById(R.id.commentSentButton_id);
@@ -74,6 +75,7 @@ public class CommentFragment extends Fragment {
         commentBoxSection = root.findViewById(R.id.commentBoxSection_id);
         commentBoxSection.setVisibility(View.GONE);
         progressBar = root.findViewById(R.id.commentProgressBar_id);
+
         commentList = new ArrayList<>();
         mFirestore = FirebaseFirestore.getInstance();
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(),1);

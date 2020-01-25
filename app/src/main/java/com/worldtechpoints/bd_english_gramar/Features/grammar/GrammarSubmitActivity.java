@@ -63,8 +63,7 @@ public class GrammarSubmitActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
+        setTitle("Grammar item Submit");
         mFirestore = FirebaseFirestore.getInstance();
         fullDescET = findViewById(R.id.grammarSubmitFullDesc_id);
         titleET = findViewById(R.id.grammarSubmitQTitle_id);
