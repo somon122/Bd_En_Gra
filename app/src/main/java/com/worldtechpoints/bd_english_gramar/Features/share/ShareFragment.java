@@ -25,7 +25,6 @@ public class ShareFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_share, container, false);
-        TextView textView = root.findViewById(R.id.text_share);
         shareAppButton = root.findViewById(R.id.shareApp_id);
 
         shareAppButton.setOnClickListener(new View.OnClickListener() {

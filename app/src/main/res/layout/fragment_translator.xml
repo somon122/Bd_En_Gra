@@ -3,60 +3,90 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/splash_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Features.translation.TranslatorFragment">
 
 
-    <EditText
-        android:id="@+id/translateLanguageET_id"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:gravity="top|left|start"
-        android:hint="Enter your text"
-        android:inputType="textMultiLine"
-        android:padding="5dp"
-        android:textColor="#000"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/translationBannerAds_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/translateToLangButton_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/button_shadow"
-        android:text="Translate"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/translateLanguageET_id" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Spinner
-        android:id="@+id/spinnerLangList_id"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/translateToLangButton_id"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/translateLanguageET_id" />
 
-    <TextView
-        android:id="@+id/translationTextShow_id"
+            <EditText
+                android:id="@+id/translateLanguageET_id"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:gravity="top|left|start"
+                android:hint="Enter your text"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/translateToLangButton_id"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/button_shadow"
+                android:text="Translate"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/translateLanguageET_id" />
+
+            <Spinner
+                android:id="@+id/spinnerLangList_id"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toStartOf="@+id/translateToLangButton_id"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/translateLanguageET_id" />
+
+            <TextView
+                android:id="@+id/translationTextShow_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="8dp"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/translateToLangButton_id" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/translationBannerAds_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:padding="5dp"
-        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/translateToLangButton_id" />
+        android:orientation="horizontal" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

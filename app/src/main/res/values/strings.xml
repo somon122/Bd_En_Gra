@@ -7,22 +7,22 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="exit">Exit</string>
 
-    <string name="menu_grammars">English Grammar Items</string>
-    <string name="menu_compositions">English Composition Site</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_grammars">Grammar Items</string>
+    <string name="menu_compositions">Composition</string>
     <string name="menu_model_questions">Grammar Exercise</string>
     <string name="menu_translators">Translation</string>
     <string name="menu_Pronunciation">Pronunciation</string>
     <string name="menu_share">Share</string>
     <string name="menu_comment">Comment</string>
     <string name="menu_rate_us">Rate us</string>
-
-    <string name="test_AppUnitId">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="test_RewardedVideoUnit">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="test_InterstitialAdUnit">ca-app-pub-3940256099942544/1033173712</string>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="privacy_policy">Privacy policy</string>
+
+
+    <string name="facebookBannerAds">1165469997177687_1165475257177161</string>
+    <string name="facebookInterstitialAds">1165469997177687_1165475257177161</string>
+    <string name="facebookRewardAds">1165469997177687_1165475257177161</string>
+
+
+
 </resources>

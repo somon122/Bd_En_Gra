@@ -44,7 +44,7 @@ public class GrammarReadActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    TextView fullView,titleView,commentTitle;
+    TextView fullView,commentTitle;
     BottomNavigationView bottomNavigationView;
     TextToSpeech t1;
     String fullText;
@@ -69,7 +69,6 @@ public class GrammarReadActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fullView = findViewById(R.id.grammarFullReadView_id);
-        titleView = findViewById(R.id.grammarTitleReadView_id);
         bottomNavigationView = findViewById(R.id.grammarBottomNavigationView);
 
 
@@ -92,7 +91,6 @@ public class GrammarReadActivity extends AppCompatActivity {
             fullText = bundle.getString("decValue");
             setTitle(titleText);
             fullView.setText(fullText);
-            titleView.setText(titleText);
             commentTitle.setText(titleText);
         }
 

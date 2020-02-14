@@ -6,13 +6,19 @@
         android:id="@+id/action_refresh"
         android:orderInCategory="100"
         android:title="Refresh"
-        android:icon="@drawable/refresh"
+        android:icon="@drawable/home_black_24dp"
         app:showAsAction="always" />
 
- <item
+     <item
         android:id="@+id/action_AdminPanel"
         android:orderInCategory="100"
         android:title="Admin_Panel"
+        app:showAsAction="never" />
+
+     <item
+        android:id="@+id/action_Help"
+        android:orderInCategory="100"
+        android:title="Help"
         app:showAsAction="never" />
 
     <item

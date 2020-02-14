@@ -15,9 +15,9 @@
             android:inputType="textMultiLine"
             android:gravity="center"
             android:textColor="#050505"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:text="Title "
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_marginBottom="5dp"
             />
 

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_grammars, R.id.nav_compositions, R.id.nav_questions,
+                R.id.nav_home, R.id.nav_grammars, R.id.nav_compositions, R.id.nav_questions,
                 R.id.nav_translators,R.id.nav_pronunciation, R.id.nav_share,
                 R.id.nav_comment, R.id.nav_rate_us,R.id.nav_termsAndConditions)
                 .setDrawerLayout(drawer)
@@ -75,8 +75,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_exit){
-
-           finishAffinity();
+            exitsAlert();
+        }
+        if (id == R.id.action_Help){
+            Toast.makeText(this, "Coming Soon..", Toast.LENGTH_SHORT).show();
         }
          if (id == R.id.action_AdminPanel){
 
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
          if (id == R.id.action_refresh){
+
 
              startActivity(new Intent(MainActivity.this,MainActivity.class));
              finish();
@@ -149,5 +152,34 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitsAlert();
+    }
+
+    private void exitsAlert() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Exits Alert !")
+                .setMessage("Are you sure to exits")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                finishAffinity();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

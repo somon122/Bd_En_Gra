@@ -13,7 +13,7 @@
         android:id="@+id/grammarReadToolbar_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ddd"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,21 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/grammarTitleReadView_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textColor="#000"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:layout_margin="5dp"
-        android:inputType="textMultiLine"
-        android:gravity="center"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grammarReadToolbar_id" />
 
 
     <ScrollView
@@ -45,7 +30,7 @@
         app:layout_constraintBottom_toTopOf="@+id/grammarBottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grammarTitleReadView_id">
+        app:layout_constraintTop_toBottomOf="@+id/grammarReadToolbar_id">
 
         <TextView
             android:id="@+id/grammarFullReadView_id"

@@ -1,7 +1,6 @@
 package com.worldtechpoints.bd_english_gramar.Features.comment;
 
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,9 +27,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComAdapter;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComPojoClass;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComShowActivity;
 import com.worldtechpoints.bd_english_gramar.R;
 
 import java.text.SimpleDateFormat;
@@ -100,6 +96,7 @@ public class CommentFragment extends Fragment {
         public void onClick(View v) {
             commentBoxSection.setVisibility(View.VISIBLE);
             commentBoxShow.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
     });
 

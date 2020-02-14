@@ -11,8 +11,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.EditorInfo;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -21,9 +25,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComAdapter;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComPojoClass;
-import com.worldtechpoints.bd_english_gramar.Features.compositions.ComShowActivity;
 import com.worldtechpoints.bd_english_gramar.R;
 
 import java.util.ArrayList;
@@ -52,6 +53,8 @@ public class GrammarShowActivity extends AppCompatActivity {
     private FirebaseFirestore mFirestore;
     private String subCategory;
 
+    private AdView adView;
+
 
 
     @Override
@@ -71,6 +74,13 @@ public class GrammarShowActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         mFirestore = FirebaseFirestore.getInstance();
 
+        AudienceNetworkAds.initialize(this);
+        adView = new AdView(this, getString(R.string.facebookBannerAds), AdSize.BANNER_HEIGHT_50);
+        LinearLayout adContainer = findViewById(R.id.grammarBannerAds_id);
+        adContainer.addView(adView);
+        adView.loadAd();
+
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             subCategory = bundle.getString("value");
@@ -80,6 +90,8 @@ public class GrammarShowActivity extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Data not found !", Toast.LENGTH_SHORT).show();
         }
+
+
 
     }
 
@@ -165,8 +177,6 @@ public class GrammarShowActivity extends AppCompatActivity {
 
 
     private void updateListUsers(List<GrammarItemClass> listQuestion) {
-
-        // Sort the list by date
 
         Collections.sort(listQuestion, new Comparator<GrammarItemClass>() {
             @Override

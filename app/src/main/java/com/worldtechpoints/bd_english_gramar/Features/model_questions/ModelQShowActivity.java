@@ -11,8 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -51,6 +55,8 @@ public class ModelQShowActivity extends AppCompatActivity {
     String mainCategory;
     String subCategory;
 
+    private AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +77,12 @@ public class ModelQShowActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
         recyclerView.setHasFixedSize(true);
         mFirestore = FirebaseFirestore.getInstance();
+
+        AudienceNetworkAds.initialize(this);
+        adView = new AdView(this, getString(R.string.facebookBannerAds), AdSize.BANNER_HEIGHT_50);
+        LinearLayout adContainer = findViewById(R.id.practiceBannerAds_id);
+        adContainer.addView(adView);
+        adView.loadAd();
 
 
 

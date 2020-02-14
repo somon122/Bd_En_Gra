@@ -12,16 +12,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.mannan.translateapi.Language;
 import com.mannan.translateapi.TranslateAPI;
 import com.worldtechpoints.bd_english_gramar.CategoryClass;
 import com.worldtechpoints.bd_english_gramar.R;
 
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +42,8 @@ public class TranslatorFragment extends Fragment {
     CategoryClass categoryClass;
     String targetLang;
 
+    private AdView adView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +56,13 @@ public class TranslatorFragment extends Fragment {
         langNameList = new ArrayList<>();
         categoryClass = new CategoryClass();
         langNameList = categoryClass.languageList();
+
+        AudienceNetworkAds.initialize(getContext());
+        adView = new AdView(getContext(), getString(R.string.facebookBannerAds), AdSize.BANNER_HEIGHT_50);
+        LinearLayout adContainer = root.findViewById(R.id.translationBannerAds_id);
+        adContainer.addView(adView);
+        adView.loadAd();
+
 
         ArrayAdapter<String> mainDataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, langNameList);
         mainDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

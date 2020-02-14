@@ -6,17 +6,15 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
 import android.widget.Toast;
-
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -24,12 +22,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.worldtechpoints.bd_english_gramar.CategoryClass;
-import com.worldtechpoints.bd_english_gramar.Features.model_questions.ModelAdapter;
-import com.worldtechpoints.bd_english_gramar.Features.model_questions.ModelQShowActivity;
-import com.worldtechpoints.bd_english_gramar.Features.model_questions.PracticeClass;
 import com.worldtechpoints.bd_english_gramar.R;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -54,6 +47,9 @@ public class ComShowActivity extends AppCompatActivity {
     private FirebaseFirestore mFirestore;
     private ComAdapter adapter;
     String subCategory;
+
+    private AdView adView;
+
 
 
 
@@ -85,6 +81,11 @@ public class ComShowActivity extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Data not found !", Toast.LENGTH_SHORT).show();
         }
+
+        adView = new AdView(this, getString(R.string.facebookBannerAds), AdSize.BANNER_HEIGHT_50);
+        LinearLayout adContainer = findViewById(R.id.compositionBannerAds_id);
+        adContainer.addView(adView);
+        adView.loadAd();
 
 
 

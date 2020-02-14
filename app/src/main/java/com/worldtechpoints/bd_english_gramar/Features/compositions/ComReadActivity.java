@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.codesgood.views.JustifiedTextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -49,9 +50,10 @@ public class ComReadActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    TextView fullView,titleView,commentTitle;
+    TextView titleView,commentTitle;
     BottomNavigationView bottomNavigationView;
     TextToSpeech t1;
+    JustifiedTextView fullView;
     String fullText;
     String titleText;
 
@@ -73,7 +75,6 @@ public class ComReadActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fullView = findViewById(R.id.comFullReadView_id);
-        titleView = findViewById(R.id.comTitleReadView_id);
         bottomNavigationView = findViewById(R.id.comBottomNavigationView);
 
         commentET = findViewById(R.id.comCommentBody_id);
@@ -95,7 +96,6 @@ public class ComReadActivity extends AppCompatActivity {
             fullText = bundle.getString("fullData");
             setTitle(titleText);
             fullView.setText(fullText);
-            titleView.setText(titleText);
             commentTitle.setText(titleText);
         }
 
